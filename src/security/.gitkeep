@@ -1,0 +1,11 @@
+# Security & Privacy Framework (Phase 5)
+#
+# This directory will contain:
+# - EncryptionEngine.ts - AES-256-GCM encryption for sensitive data
+# - BiometricAuth.ts - Face and voice verification systems
+# - PrivacyManager.ts - Granular privacy controls and user consent
+# - AuthenticationManager.ts - Multi-factor authentication system
+# - SecurityAuditor.ts - Security event monitoring and logging
+# - certificates/ - Subdirectory for SSL/TLS certificates (git-ignored)
+#
+# Implementation planned for Phase 5: Security, Analytics & Personalization

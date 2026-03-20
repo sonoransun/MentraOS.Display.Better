@@ -1,0 +1,11 @@
+# Advanced Accessibility Features (Phase 4)
+#
+# This directory will contain:
+# - VoiceCommands.ts - Natural language voice command system
+# - EyeTracking.ts - Gaze-based navigation and control
+# - SpatialAudio.ts - 3D positioned audio cues and guidance
+# - GestureRecognition.ts - Hand and head movement recognition
+# - AccessibilityManager.ts - Centralized accessibility coordination
+# - models/ - Subdirectory for accessibility AI models
+#
+# Implementation planned for Phase 4: Advanced Accessibility & 3D Spatial UI

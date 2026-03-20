@@ -1,0 +1,11 @@
+# AI/ML Processing Engines (Phase 2)
+#
+# This directory will contain:
+# - NLPEngine.ts - Natural language processing pipeline
+# - ContextEngine.ts - Context awareness and environmental understanding
+# - PersonalizationEngine.ts - User behavior and preference learning
+# - TranslationEngine.ts - Multi-language translation services
+# - IntentClassifier.ts - User intent detection and classification
+# - models/ - Subdirectory for NLP and ML model files
+#
+# Implementation planned for Phase 2: AI/ML & Computer Vision Pipeline

@@ -1,0 +1,11 @@
+# Computer Vision Pipeline (Phase 2)
+#
+# This directory will contain:
+# - VisionEngine.ts - Main computer vision processing engine
+# - ObjectDetection.ts - YOLO-based object detection
+# - FaceRecognition.ts - Face detection and recognition
+# - OCR.ts - Text extraction and recognition
+# - SceneUnderstanding.ts - Environmental scene analysis
+# - models/ - Subdirectory for AI model files
+#
+# Implementation planned for Phase 2: AI/ML & Computer Vision Pipeline

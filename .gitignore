@@ -1,13 +1,1040 @@
-.env
+# Enhanced MentraOS Application - Comprehensive .gitignore
+# =============================================================================
+# This file ensures maximum effectiveness and prevents subrepos/dependencies
+# from being included in upstream commits
+# =============================================================================
+
+# =============================================================================
+# DEPENDENCIES & PACKAGE MANAGERS (CRITICAL: Prevent upstream pollution)
+# =============================================================================
+
+# Node.js dependencies (PRIMARY PROTECTION - Maximum Coverage)
 node_modules/
-bun.lock
-.DS_Store
-*.log
-# VSCode
-.vscode/
-# Mac system files
-.DS_Store
-# Logs
+*/node_modules/
+**/node_modules/
+node_modules.nosync/
+*node_modules*/
+*node-modules*/
+test-node-modules/
+.node-modules/
+.node_modules/
+
+# Package manager artifacts
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log* 
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+.yarn-integrity
+.yarnrc
+.yarnrc.yml
+
+# Bun runtime and cache
+.bun/
+bun.lockb
+.bun-cache/
+
+# pnpm
+.pnpm-store/
+.pnpm-debug.log*
+pnpm-lock.yaml
+.pnpm/
+
+# Package manager lock files (CONDITIONAL - Enable if needed)
+# Uncomment if you want to exclude lock files (not recommended for production)
+# package-lock.json
+# yarn.lock
+# bun.lockb
+# pnpm-lock.yaml
+
+# Legacy and alternative package managers
+jspm_packages/
+bower_components/
+web_modules/
+typings/
+
+# Deno dependencies
+.deno/
+deno.lock
+
+# Global installations (prevent local copies)
+.global/
+global-modules/
+
+# Package manager workspaces and mono-repo artifacts
+.rush/
+.lerna/
+lerna-debug.log*
+.ultra.cache.json
+
+# Cached dependency information
+.npm/
+.eslintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Dependency vulnerability databases
+.snyk
+.audit-ci/
+
+# =============================================================================
+# ENVIRONMENT & CONFIGURATION
+# =============================================================================
+
+# Environment files (CRITICAL: Never commit secrets!)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+*.env
+.envrc
+.test-env
+.env-test
+.env_test
+*-env
+*.env*
+test.env
+test*.env
+.*.env
+
+# Configuration files with secrets
+config/secrets.json
+config/local.json
+config/*.key
+secrets/
+.secrets/
+
+# Redis configuration with passwords
+redis.conf
+
+# =============================================================================
+# BUILD OUTPUTS & DISTRIBUTION
+# =============================================================================
+
+# TypeScript build outputs
+dist/
+build/
+out/
+lib/
+*.tsbuildinfo
+
+# Compiled JavaScript
+*.js.map
+src/**/*.js
+src/**/*.d.ts
+
+# Webpack bundles
+bundle/
+webpack-bundle/
+static/js/
+static/css/
+
+# Electron build outputs
+release/
+app/dist/
+electron-dist/
+
+# =============================================================================
+# TESTING & COVERAGE
+# =============================================================================
+
+# Test coverage reports
+coverage/
+.coverage/
+*.lcov
+.nyc_output/
+htmlcov/
+
+# Test results
+test-results/
+junit.xml
+test-report.xml
+.jest/
+
+# Playwright test results
+playwright-report/
+test-results-*
+
+# =============================================================================
+# LOGS & TEMPORARY FILES
+# =============================================================================
+
+# Application logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary directories
+tmp/
+temp/
+.tmp/
+.temp/
+
+# OS temporary files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# =============================================================================
+# DEVELOPMENT TOOLS & IDEs
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# DATABASES & STORAGE
+# =============================================================================
+
+# Redis dumps
+dump.rdb
+redis.log
+redis-server.log
+
+# SQLite databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Database backups
+*.sql
+*.dump
+
+# =============================================================================
+# AI/ML & DATA FILES
+# =============================================================================
+
+# TensorFlow/ML models
+models/
+*.h5
+*.pb
+*.onnx
+*.tflite
+*.savedmodel
+
+# Training data and datasets
+data/
+datasets/
+training_data/
+*.csv
+*.json
+!package.json
+!tsconfig.json
+!jest.config.js
+!.eslintrc.js
+
+# Computer vision training images
+images/training/
+images/test/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+# Keep example images
+!docs/images/*
+!assets/icons/*
+!public/images/*
+
+# Audio files for training
+audio/
+*.wav
+*.mp3
+*.flac
+*.m4a
+
+# =============================================================================
+# CONTAINERS & VIRTUALIZATION (Prevent accidental dependency inclusion)
+# =============================================================================
+
+# Docker
+.docker/
+.dockerignore.bak
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+.docker-sync/
+docker-sync.yml
+.docker-volumes/
+
+# Docker build contexts and layers
+.dockerbuild/
+.dockerfile-cache/
+.docker-cache/
+
+# Podman
+.podman/
+
+# Vagrant
+.vagrant/
+*.box
+.vagrant.d/
+Vagrantfile.local
+
+# VirtualBox
+*.vdi
+*.vmdk
+*.vbox
+*.vbox-prev
+
+# VMware
+*.vmx
+*.vmxf
+*.vmsd
+*.vmsn
+*.vmss
+*.nvram
+
+# Kubernetes manifests with secrets
+*secret*.yaml
+*secret*.yml
+kubeconfig*
+*.kubeconfig
+
+# Helm
+.helm/
+charts/*/charts/
+charts/*/requirements.lock
+
+# Terraform state (can contain dependencies)
+terraform.tfstate*
+.terraform/
+.terraform.lock.hcl
+*.tfplan
+*.tfvars
+*.auto.tfvars
+
+# Ansible
+.ansible/
+*.retry
+roles/*/
+galaxy_roles/
+collections/
+
+# =============================================================================
+# SECURITY & CERTIFICATES
+# =============================================================================
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+ssl/
+certs/
+
+# SSH keys
+*.pub
+id_rsa
+id_ed25519
+known_hosts
+
+# GPG keys
+*.gpg
+*.asc
+
+# JWT secrets and tokens
+*.jwt
+tokens/
+
+# =============================================================================
+# CACHING & OPTIMIZATION
+# =============================================================================
+
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettier-cache
+
+# TypeScript cache
+*.tscache
+
+# Babel cache
+.babel-cache/
+
+# Webpack cache
+.cache/
+.webpack/
+
+# Parcel cache
+.parcel-cache/
+
+# Next.js build output
+.next/
+
+# Nuxt.js build / generate output
+.nuxt/
+
+# =============================================================================
+# ANALYTICS & MONITORING
+# =============================================================================
+
+# Analytics data
+analytics/
+metrics/
+*.metrics
+
+# Performance monitoring
+traces/
+profiling/
+
+# Error tracking
+errors/
+crashes/
+
+# =============================================================================
+# PLATFORM-SPECIFIC FILES
+# =============================================================================
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+.DocumentRevisions-V100
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# VERSION CONTROL & SUBREPOS (CRITICAL: Prevent nested repo commits)
+# =============================================================================
+
+# Git submodules and nested repositories (MAXIMUM PROTECTION)
+.git/modules/
+.git/hooks/
+.git/info/
+.git/logs/
+.git/objects/
+.git/refs/
+.git/shallow
+.git/worktrees/
+.gitmodules.bak
+.gitmodules.old
+.gitmodules.tmp
+*/.git/
+**/.git/
+*/.git
+**/.git
+test-.git/
+.test-git/
+*-git/
+*.git/
+
+# Prevent accidental submodule directory commits (Maximum Coverage)
+submodules/
+sub-modules/
+external/
+externals/
+third-party/
+third_party/
+thirdparty/
+vendor/
+vendors/
+deps/
+dependencies/
+*vendor*/
+*deps*/
+*dependencies*/
+test-vendor/
+test-deps/
+test-dependencies/
+.vendor/
+.deps/
+.dependencies/
+
+# Git worktree artifacts
+.git-worktree/
+worktree/
+worktrees/
+
+# Git subtree artifacts
+.subtree/
+subtree-*/
+
+# Nested git repositories (catch-all patterns)
+*/.git/
+**/.git/
+*/.git
+**/.git
+
+# Repository state files
+.git/COMMIT_EDITMSG
+.git/FETCH_HEAD
+.git/HEAD
+.git/MERGE_HEAD
+.git/ORIG_HEAD
+.git/index
+.git/index.lock
+.git/packed-refs
+
+# Git-flow artifacts
+.git/refs/heads/develop
+.git/refs/heads/feature/*
+.git/refs/heads/release/*
+.git/refs/heads/hotfix/*
+
+# Other version control systems
+# Mercurial
+.hg/
+.hgignore
+.hgsigs
+.hgsubstate
+.hgtags
+.hgflow
+
+# SVN
+.svn/
+.svnignore
+
+# Bazaar
+.bzr/
+.bzrignore
+
+# CVS
+CVS/
+.cvsignore
+
+# Fossil
+.fossil-settings/
+
+# Darcs
+_darcs/
+
+# Monotone
+_MTN/
+
+# Perforce
+.p4config
+.p4ignore
+
+# Team Foundation Server
+$tf/
+*.vspscc
+*.vssscc
+
+# Git Large File Storage (LFS) artifacts
+.gitattributes.backup
+*.lfs.*
+
+# =============================================================================
+# MONOREPO & WORKSPACE STRUCTURES (Prevent dependency pollution)
+# =============================================================================
+
+# Workspace and monorepo artifacts
+.pnp/
+.pnp.js
+.pnp.cjs
+.yarn/
+.yarnrc.yml
+.yarn-metadata.json
+.yarn/releases/
+.yarn/plugins/
+.yarn/sdks/
+.yarn/versions/
+
+# Nx monorepo
+.nx/
+nx.json
+workspace.json
+angular.json
+.nx/cache/
+.nx/workspace-data/
+
+# Rush monorepo
+.rush/
+common/
+common/changes/
+common/config/
+common/deploy/
+common/scripts/
+common/temp/
+rush.json
+.rushrc
+
+# Lerna monorepo
+lerna.json
+.lerna/
+packages/*/node_modules/
+packages/*/dist/
+packages/*/build/
+packages/*/lib/
+
+# Yarn workspaces
+workspaces/
+workspace-*/
+
+# Turborepo
+.turbo/
+turbo.json
+
+# Bazel
+bazel-*
+.bazelrc
+.bazelversion
+
+# Buck
+.buckconfig
+.buckd/
+buck-out/
+
+# Gradle (for hybrid projects)
+.gradle/
+build/
+gradle/
+gradlew
+gradlew.bat
+
+# Maven (for hybrid projects)
+.m2/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Cargo (Rust)
+Cargo.lock
+target/
+
+# Go modules
+go.mod
+go.sum
+vendor/
+
+# Python virtual environments and packages
+.venv/
+venv/
+ENV/
+env/
+.env/
+pip-log.txt
+pip-delete-this-directory.txt
+__pycache__/
+*.py[cod]
+*$py.class
+site-packages/
+.Python
+
+# Ruby gems
+.bundle/
+vendor/bundle/
+vendor/cache/
+vendor/gems/
+.gem/
+Gemfile.lock
+
+# PHP Composer
+vendor/
+composer.lock
+composer.phar
+
+# .NET packages
+packages/
+bin/
+obj/
+*.nupkg
+project.lock.json
+
+# Java/Scala
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/
+target/
+
+# =============================================================================
+# CLOUD & DEPLOYMENT
+# =============================================================================
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Ansible
+*.retry
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+
+# AWS
+.aws/
+aws-exports.js
+
+# Google Cloud
+.gcloud/
+gcloud-service-key.json
+
+# Azure
+.azure/
+
+# Serverless Framework
+.serverless/
+
+# =============================================================================
+# MONITORING & PROFILING
+# =============================================================================
+
+# Application monitoring
+newrelic_agent.log
+.newrelic/
+
+# Profiling reports
+*.prof
+*.cpuprofile
+*.heapsnapshot
+
+# Benchmarking
+benchmark/
+*.benchmark
+
+# =============================================================================
+# DOCUMENTATION BUILDS
+# =============================================================================
+
+# Generated documentation
+docs/build/
+docs/_build/
+docs/generated/
+*.generated.md
+
+# Sphinx documentation
+docs/_build/
+
+# JSDoc
+jsdoc/
+
+# =============================================================================
+# PACKAGE-SPECIFIC EXCLUSIONS
+# =============================================================================
+
+# Rush
+common/temp/
+common/deploy/
+
+# Lerna
+lerna-debug.log*
+
+# Nx
+.nx/cache
+
+# Turborepo
+.turbo
+
+# =============================================================================
+# PROJECT-SPECIFIC EXCLUSIONS
+# =============================================================================
+
+# MentraOS specific
+.mentra/
+mentra-cache/
+
+# Redis memory dumps
+*.rdb
+
+# Session storage backups
+sessions/
+session-backup/
+
+# AI model checkpoints
+checkpoints/
+model-checkpoints/
+
+# Computer vision calibration data
+calibration/
+camera-calibration/
+
+# Audio processing cache
+audio-cache/
+speech-cache/
+
+# Translation cache
+translation-cache/
+
+# User data and preferences (development)
+user-data/
+preferences/
+dev-users/
+
+# Performance logs
+performance/
+perf-*.log
+
+# Memory dumps
+*.dmp
+*.dump
+
+# =============================================================================
+# BACKUP & ARCHIVE FILES
+# =============================================================================
+
+# Archive files
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+
+# =============================================================================
+# END OF .gitignore
+# =============================================================================
+
+# IMPORTANT NOTES:
+# 1. This .gitignore is designed for maximum security and cleanliness
+# 2. Always review files before committing, especially in sensitive projects
+# 3. Use 'git add -f <file>' to force-add files that should be tracked
+# 4. Consider using .gitignore_global for OS-specific patterns
+# 5. Update this file as the project evolves and new tools are added
+
+# =============================================================================
+# MAXIMUM PROTECTION: CATCH-ALL PATTERNS (Absolute dependency/subrepo safety)
+# =============================================================================
+
+# Catch any missed dependency directories by common names
+**/deps/
+**/dependencies/
+**/lib/
+**/libs/
+**/libraries/
+**/modules/
+**/packages/
+**/pkg/
+**/pkgs/
+**/components/
+**/addons/
+**/plugins/
+**/extensions/
+
+# Language-specific catch-alls
+*/node_modules
+*/bower_components
+*/jspm_packages
+*/web_modules
+*/vendor
+*/target
+*/build
+*/dist
+*/out
+
+# Hidden dependency directories (often created by tools)
+.*/node_modules/
+.*/vendor/
+.*/deps/
+.*-cache/
+.*-modules/
+
+# Symlinked dependencies (prevent following symlinks to dependencies)
+link-modules/
+linked-deps/
+symlink-*/
+
+# Tool-specific dependency patterns
+.tools/
+.devtools/
+.dev-dependencies/
+.runtime-dependencies/
+.build-dependencies/
+
+# Workspace and project artifacts that might contain dependencies
+.workspace/
+.project/
+.settings/
+.metadata/
+.recommenders/
+
+# Cache directories that might store dependencies
+.cache/
+cache/
+.tmp-cache/
+.dependency-cache/
+.module-cache/
+.package-cache/
+
+# Build tool artifacts
+.build/
+.compile/
+.compiled/
+.generated/
+.gen/
+
+# Installation directories
+install/
+installed/
+.install/
+.installed/
+
+# Archive extraction directories (temporary dependencies)
+extracted/
+.extracted/
+unpacked/
+.unpacked/
+
+# Lock and state files for various tools
+*.lock
+.lock
+lock.*
+state.*
+.state
+
+# Temporary directories that might contain dependencies
+temp-*/
+tmp-*/
+temporary-*/
+.temp-*/
+.tmp-*/
+.temporary-*/
+
+# =============================================================================
+# VERIFICATION PATTERNS (Use these to test protection effectiveness)
+# =============================================================================
+
+# Test patterns - these should NEVER appear in commits:
+# test-node-modules/         # Should be ignored
+# test-deps/                 # Should be ignored
+# test-.git/                 # Should be ignored
+# test-vendor/               # Should be ignored
+# .test-env                  # Should be ignored
+
+# =============================================================================
+# CRITICAL REMINDERS
+# =============================================================================
+
+# ALWAYS VERIFY BEFORE COMMITTING:
+# 1. Run: git status
+# 2. Run: git diff --cached
+# 3. Check: No dependencies, node_modules, vendor, or .git directories
+# 4. Check: No .env files or secrets
+# 5. Check: File count is reasonable (not thousands of dependency files)
+
+# EMERGENCY COMMANDS IF DEPENDENCIES ACCIDENTALLY COMMITTED:
+# git reset HEAD -- node_modules/
+# git reset HEAD -- vendor/
+# git reset HEAD -- .git/
+# git reset HEAD -- deps/
+
+# For project-specific additions, add them below this line:
+# =============================================================================
+# PROJECT-SPECIFIC ADDITIONS
+# =============================================================================
+
+# Enhanced MentraOS specific exclusions
+.mentra-cache/
+.mentraos-temp/
+mentra-modules/
+.glass-deps/
+
+# AI/ML model dependencies (often large)
+model-dependencies/
+.model-cache/
+pretrained-models/
+.transformers-cache/
+.torch-cache/
+
+# Development environment specific
+.dev-env/
+.development/
+.local-deps/
+
+# Add any additional project-specific ignores here...

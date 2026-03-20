@@ -1,0 +1,11 @@
+# Core Business Logic Services
+#
+# This directory will contain:
+# - SessionService.ts - Session management and lifecycle
+# - UserService.ts - User management and preferences
+# - AIOrchestrator.ts - AI/ML service coordination
+# - NotificationService.ts - Cross-platform notification management
+# - CacheService.ts - Intelligent caching and data management
+# - MetricsService.ts - Performance and usage metrics
+#
+# Implementation: Ongoing across all phases
